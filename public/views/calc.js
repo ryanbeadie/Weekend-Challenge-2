@@ -19,8 +19,7 @@ var object = {
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'addition';
-    var result = parseInt(object.firstNumber) + parseInt(object.secondNumber);
-    object.equals = result;
+    object.equals = parseInt(object.firstNumber) + parseInt(object.secondNumber);
 
     ajaxPost();
 
@@ -30,7 +29,7 @@ var object = {
       success: function( response ){
       console.log( 'back from server with:', response.inventory );
       $( '#outputDiv' ).append( '<p> ' + object.firstNumber + ' + ' +
-        object.secondNumber + ' = ' + result + '</p>' );
+        object.secondNumber + ' = ' + object.equals + '</p>' );
       } // end success
     });// end ajax
   }//end addition()
@@ -44,8 +43,7 @@ function subtraction(){
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'Subtraction';
-    var result = parseInt(object.firstNumber) - parseInt(object.secondNumber);
-    object.equals = result;
+    object.equals = parseInt(object.firstNumber) - parseInt(object.secondNumber);
 
     ajaxPost();
 
@@ -55,7 +53,7 @@ function subtraction(){
       success: function( response ){
       console.log( 'back from server with:', response.inventory );
       $( '#outputDiv' ).append( '<p> ' + object.firstNumber + ' - ' +
-        object.secondNumber + ' = ' + result + '</p>' );
+        object.secondNumber + ' = ' + object.equals + '</p>' );
         } // end success
       });// end ajax
   }//end subtraction()
@@ -69,8 +67,7 @@ function times (){
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'Multiply';
-    var result = parseInt(object.firstNumber) * parseInt(object.secondNumber);
-    object.equals = result;
+    object.equals = parseInt(object.firstNumber) * parseInt(object.secondNumber);
 
     ajaxPost(); //call ajaxPost
 
@@ -80,7 +77,7 @@ function times (){
       success: function( response ){
       console.log( 'back from server with:', response.inventory );
       $( '#outputDiv' ).append( '<p> ' + object.firstNumber + ' * ' +
-        object.secondNumber + ' = ' + result + '</p>' );
+        object.secondNumber + ' = ' + object.equals + '</p>' );
       } // end success
     });// end ajax
   }//end times
@@ -94,8 +91,7 @@ function division(){
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'Division';
-    var result = parseInt(object.firstNumber) / parseInt(object.secondNumber);
-    object.equals = result;
+    object.equals = parseInt(object.firstNumber) / parseInt(object.secondNumber);
 
     ajaxPost();
 
@@ -105,7 +101,7 @@ function division(){
       success: function( response ){
       console.log( 'back from server with:', response.inventory );
       $( '#outputDiv' ).append( '<p> ' + object.firstNumber + ' / ' +
-        object.secondNumber + ' = ' + result + '</p>' );
+        object.secondNumber + ' = ' + object.equals + '</p>' );
       } // end success
     });// end ajax
   }//end division
