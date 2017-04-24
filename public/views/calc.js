@@ -26,15 +26,7 @@ var operator = {};
 
     ajaxPost();
     ajaxGet();
-    // $.ajax({
-    //   url: '/items',
-    //   type: 'GET',
-    //   success: function( response ){
-    //   console.log( 'back from server with:', response.inventory );
-    //   $( '#outputDiv' ).append( '<p> ' + object.firstNumber + operator.math +
-    //     object.secondNumber + ' = ' + object.equals + '</p>' );
-    //   } // end success
-    // });// end ajax
+    
   }//end addition()
 
 
