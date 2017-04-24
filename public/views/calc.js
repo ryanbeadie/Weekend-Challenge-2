@@ -1,16 +1,14 @@
 $( document ).ready( function(){
 console.log('ready');
 
-var object = {
-      };
+  var object = {};
+  var operator = {};
 
-var operator = {};
-
-  $( '#add' ).on( 'click', function(){addition(object);});
-  $( '#subtract' ).on( 'click', function(){subtraction(object);});
-  $( '#multiply' ).on( 'click', function(){times(object);});
-  $( '#divide' ).on( 'click', function(){division(object);});
-  $( '#clearButton' ).on( 'click', function(){clear(object);});
+  $( '#add' ).on( 'click', function(){addition();});
+  $( '#subtract' ).on( 'click', function(){subtraction();});
+  $( '#multiply' ).on( 'click', function(){times();});
+  $( '#divide' ).on( 'click', function(){division();});
+  $( '#clearButton' ).on( 'click', function(){clear();});
 
 
   function addition(){
@@ -26,7 +24,7 @@ var operator = {};
 
     ajaxPost();
     ajaxGet();
-    
+
   }//end addition()
 
 
@@ -58,7 +56,7 @@ function times (){
     object.operation  = 'Multiply';
     object.equals = parseInt(object.firstNumber) * parseInt(object.secondNumber);
 
-    ajaxPost(); //call ajaxPost
+    ajaxPost(); 
     ajaxGet();
 
   }//end times
@@ -104,7 +102,7 @@ function ajaxPost(){
   }//end ajaxPost
 
 function ajaxGet(){
-  $.ajax({
+    $.ajax({
     url: '/items',
     type: 'GET',
     success: function( response ){
@@ -114,7 +112,5 @@ function ajaxGet(){
     } // end success
   });// end ajax
 }//end ajaxGet
-
-
 
 }); //end ready
