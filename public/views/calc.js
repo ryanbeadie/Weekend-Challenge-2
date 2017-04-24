@@ -1,7 +1,6 @@
 $( document ).ready( function(){
 console.log('ready');
 
-
 var object = {
       };
 
@@ -20,18 +19,10 @@ var object = {
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'addition';
-
     var result = parseInt(object.firstNumber) + parseInt(object.secondNumber);
     object.equals = result;
 
-    $.ajax({
-      url: '/addItem',
-      type: 'POST',
-      data: object,
-      success: function( response ){
-      console.log( 'back from server with:', response );
-      }//end success
-    });//end ajax
+    ajaxPost();
 
     $.ajax({
       url: '/items',
@@ -45,7 +36,7 @@ var object = {
   }//end addition()
 
 
-  function subtraction(){
+function subtraction(){
 
     $('#add').hide();
     $('#multiply').hide();
@@ -53,18 +44,10 @@ var object = {
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'Subtraction';
-
     var result = parseInt(object.firstNumber) - parseInt(object.secondNumber);
     object.equals = result;
 
-    $.ajax({
-      url: '/addItem',
-      type: 'POST',
-      data: object,
-      success: function( response ){
-      console.log( 'back from server with:', response );
-        }//end success
-    });//end ajax
+    ajaxPost();
 
     $.ajax({
       url: '/items',
@@ -78,7 +61,7 @@ var object = {
   }//end subtraction()
 
 
-  function times (){
+function times (){
 
     $('#subtract').hide();
     $('#add').hide();
@@ -86,18 +69,10 @@ var object = {
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'Multiply';
-
     var result = parseInt(object.firstNumber) * parseInt(object.secondNumber);
     object.equals = result;
 
-    $.ajax({
-      url: '/addItem',
-      type: 'POST',
-      data: object,
-      success: function( response ){
-      console.log( 'back from server with:', response );
-      }//end success
-    });//end ajax
+    ajaxPost(); //call ajaxPost
 
     $.ajax({
       url: '/items',
@@ -111,7 +86,7 @@ var object = {
   }//end times
 
 
-  function division(){
+function division(){
 
     $('#subtract').hide();
     $('#multiply').hide();
@@ -119,18 +94,10 @@ var object = {
     object.firstNumber = $( '#inputOne' ).val();
     object.secondNumber = $( '#inputTwo' ).val();
     object.operation  = 'Division';
-
     var result = parseInt(object.firstNumber) / parseInt(object.secondNumber);
     object.equals = result;
 
-    $.ajax({
-      url: '/addItem',
-      type: 'POST',
-      data: object,
-      success: function( response ){
-      console.log( 'back from server with:', response );
-      }//end success
-    });//end ajax
+    ajaxPost();
 
     $.ajax({
       url: '/items',
@@ -154,4 +121,16 @@ function clear() {
       $( '#inputTwo' ).val('');
 
   }//end clear
+
+function ajaxPost(){
+      $.ajax({
+      url: '/addItem',
+      type: 'POST',
+      data: object,
+      success: function( response ){
+      console.log( 'back from server with:', response );
+        }//end success
+      });//end ajax
+  }//end ajaxPost
+
 }); //end ready
